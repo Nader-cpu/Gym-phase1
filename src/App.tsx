@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GenericDropdown from "./components/dropdown";
+import GenericTable from "./components/dataTable";
+
+import data from "./components/data";
+import { GenericInstructions } from "./components/instructions";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <h2>Create Program</h2>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          overflow: "wrap",
+        }}
+      >
+        <GenericDropdown placeHolder={"Biceps"} exercises={data.biceps} />
+        <GenericDropdown placeHolder={"Triceps"} exercises={data.triceps} />
+        <GenericDropdown placeHolder={"Back"} exercises={data.back} />
+        <GenericDropdown placeHolder={"Chest"} exercises={data.chest} />
+        <GenericDropdown placeHolder={"Legs"} exercises={data.legs} />
+        <GenericDropdown placeHolder={"Shoulders"} exercises={data.shoulders} />
+        <GenericDropdown placeHolder={"Abs"} exercises={data.abs} />
+        <GenericDropdown placeHolder={"Traps"} exercises={data.traps} />
+      </div>
+
+      <br />
+      <GenericInstructions />
+
+      <GenericTable />
+    </>
   );
 }
 
