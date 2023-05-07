@@ -5,9 +5,11 @@ import { Button } from "primereact/button";
 import { useDispatch, useSelector } from "react-redux";
 import { removeExercise } from "../store/store";
 
-function GenericTable(props: string) {
+function GenericTable() {
   const dispatch = useDispatch();
-  const selectedExercises = useSelector((state) => state.exerciseReducer.data);
+  const selectedExercises = useSelector(
+    (state: any) => state.exerciseReducer.data
+  );
 
   const actionTemplate = (rowData: string) => {
     const icon = "pi pi-trash";
@@ -40,7 +42,7 @@ function GenericTable(props: string) {
   }));
 
   const exportPdf = () => {
-    import("jspdf").then((jsPDF) => {
+    import("jspdf").then((jsPDF: any) => {
       import("jspdf-autotable").then(() => {
         const doc = new jsPDF.default(0, 0);
 

@@ -4,9 +4,16 @@ import "../styles/dropdown.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addExercise } from "../store/store";
 
-export default function GenericDropdown({ placeHolder, exercises }) {
+interface Props {
+  placeHolder: string;
+  exercises: any;
+}
+
+export default function GenericDropdown({ placeHolder, exercises }: Props) {
   const dispatch = useDispatch();
-  const selectedExercises = useSelector((state) => state.exerciseReducer.data);
+  const selectedExercises = useSelector(
+    (state: any) => state.exerciseReducer.data
+  );
   const handleSelectChange = (value: string) => {
     console.log("I'm in handleSelectChange");
     dispatch(addExercise(value));

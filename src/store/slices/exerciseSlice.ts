@@ -1,10 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Exercise } from "../../data/interfaces/exercise";
+
+interface ExerciseState {
+  data: Exercise[];
+}
 
 const exerciseSlice = createSlice({
   name: "selectedExercises",
   initialState: {
     data: [],
-  },
+  } as ExerciseState,
   reducers: {
     addExercise: (state, action) => {
       return {
@@ -16,7 +21,7 @@ const exerciseSlice = createSlice({
       return {
         ...state,
         data: state.data.filter(
-          (exercise) => exercise.name !== action.payload.name
+          (exercise: Exercise) => exercise.name !== action.payload.name
         ),
       };
     },
@@ -24,7 +29,5 @@ const exerciseSlice = createSlice({
 });
 
 export const { addExercise, removeExercise } = exerciseSlice.actions;
-
-export const { selectedExercises } = exerciseSlice;
 
 export const exerciseReducer = exerciseSlice.reducer;

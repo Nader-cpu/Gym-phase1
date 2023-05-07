@@ -10,7 +10,7 @@ import "primereact/resources/primereact.min.css";
 //icons
 import "primeicons/primeicons.css";
 
-const el = document.getElementById("root");
+const el: HTMLElement = document.getElementById("root")!;
 const root = ReactDOM.createRoot(el);
 
 root.render(
