@@ -57,7 +57,7 @@ function GenericTable() {
       <Button
         type="button"
         icon="pi pi-file-pdf"
-        severity="danger"
+        severity="warning"
         onClick={exportPdf}
         data-pr-tooltip="PDF"
       />

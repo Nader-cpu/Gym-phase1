@@ -4,7 +4,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 //theme
-import "primereact/resources/themes/viva-dark/theme.css";
+import "primereact/resources/themes/md-light-indigo/theme.css";
 //core
 import "primereact/resources/primereact.min.css";
 //icons
